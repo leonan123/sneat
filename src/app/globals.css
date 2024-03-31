@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240, 19%, 17%;
+    --foreground: 237, 20%, 21%;
+    --foreground-hover: 237deg 13.45% 31.36% / 30%;
+  
+    --card: 237, 20%, 21%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --primary: 239, 100%, 71%;
+    --primary-foreground: 0, 0%, 100%;
+    
+    --muted: 240, 29%, 89%;
+  }
+
+  .dark {
+    --muted-foreground: 240 29% 89%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary-foreground antialiased min-h-screen;
+  }
+}

@@ -1,12 +1,15 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Public_Sans as PublicSans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const publicSans = PublicSans({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'Sneat',
+  title: {
+    template: '%s - Sneat',
+    default: 'sneat',
+  },
 }
 
 export default function RootLayout({
@@ -15,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${publicSans.className} dark`}>
+      <body>{children}</body>
     </html>
   )
 }
