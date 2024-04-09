@@ -1,3 +1,7 @@
 export default function Home() {
-  return <h1 className="ml-96 text-4xl">Hello World</h1>
+  return (
+    <main className="ml-0 px-6 pb-3 md:ml-64">
+      <h1>Dashboard Teste de novo</h1>
+    </main>
+  )
 }
