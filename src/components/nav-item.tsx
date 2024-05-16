@@ -1,6 +1,5 @@
-import { twMerge } from 'tailwind-merge'
-
 import { NAV_LINKS } from '@/constants'
+import { cn } from '@/lib/utils'
 
 interface INavItemProps {
   link: (typeof NAV_LINKS)[number]['links'][number]
@@ -11,10 +10,10 @@ export function NavItem({ link }: INavItemProps) {
 
   return (
     <li
-      className={twMerge(
-        'rounded-md opacity-60 hover:bg-foreground-hover',
+      className={cn(
+        'rounded-md text-muted transition-colors hover:bg-hover-secondary',
         isActive &&
-          'bg-primary text-primary-foreground opacity-100 hover:bg-primary/95',
+          'bg-active font-medium text-active opacity-100 hover:bg-active/90',
       )}
     >
       <a href={link.href} className="flex items-center gap-2 px-4 py-2">

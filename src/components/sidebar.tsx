@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { twMerge } from 'tailwind-merge'
+import Link from 'next/link'
 
 import { NAV_LINKS } from '@/constants'
 import { useSidebar } from '@/contexts/sidebar'
+import { cn } from '@/lib/utils'
 
 import { Logo } from './logo'
 import { NavLinkGroup } from './nav-link-group'
@@ -14,9 +15,8 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Sidebar overlay when is small screen */}
       <div
-        className={twMerge(
+        className={cn(
           'fixed inset-0 bg-black/40',
           isOpen ? 'block md:hidden' : 'hidden',
         )}
@@ -24,15 +24,15 @@ export function Sidebar() {
       />
 
       <aside
-        className={twMerge(
-          'fixed z-20 flex h-screen flex-col justify-between overflow-hidden bg-foreground px-4 transition-all duration-300 ease-in-out',
+        className={cn(
+          'fixed z-20 flex h-screen flex-col justify-between overflow-hidden bg-secondary px-4 transition-all duration-300 ease-in-out',
           isOpen ? 'w-64' : 'w-0 p-0',
         )}
       >
         <div>
           <a className="flex items-center gap-3 px-4 pt-7">
-            <Logo className="h-[32px] w-[22px] text-primary" />
-            <h1 className="text-3xl font-semibold text-muted">sneat</h1>
+            <Logo className="h-[32px] w-[22px] text-secondary" />
+            <h1 className="text-3xl font-semibold">sneat</h1>
           </a>
 
           <nav className="mt-4 overflow-y-auto overflow-x-hidden">
@@ -42,7 +42,7 @@ export function Sidebar() {
           </nav>
         </div>
 
-        <a href="#">
+        <Link href="#">
           <Image
             src="/upgrade-banner-dark.png"
             alt="Upgrade to Pro"
@@ -50,7 +50,7 @@ export function Sidebar() {
             height={336}
             priority
           />
-        </a>
+        </Link>
       </aside>
     </>
   )

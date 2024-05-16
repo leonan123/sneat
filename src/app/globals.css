@@ -4,26 +4,34 @@
 
 @layer base {
   :root {
-    --background: 240, 19%, 17%;
-    --foreground: 237, 20%, 21%;
-    --foreground-hover: 237deg 13.45% 31.36% / 30%;
-  
+    --bg-primary: 240, 19%, 17%;
+    --bg-secondary: 237, 20%, 21%;
+    --bg-tertiary: 238.33, 26.09%, 27.06%;
+    --bg-active:  239, 100%, 71%;
+
+    --bg-secondary-hover: 237deg 13.45% 31.36% / 30%;
+    --bg-tertiary-hover: 237.14, 19.63%, 20.98%;
+    
+    --text-primary: 240,25%,87.45%;
+    --text-secondary: 239, 100%, 71%;
+    --text-muted: 240,9.68%,63.53%;
+    --text-active: 0, 0%, 100%;
+    
+    --info: 191, 97%, 47%;
+    --error: 9, 100%, 56%;
+    --success: 99, 71%, 54%;
+
     --card: 237, 20%, 21%;
     --card-foreground: 240 10% 3.9%;
-    
-    --primary: 239, 100%, 71%;
-    --primary-foreground: 0, 0%, 100%;
-    
-    --muted: 240, 29%, 89%;
-  }
-
-  .dark {
-    --muted-foreground: 240 29% 89%;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-primary-foreground antialiased min-h-screen;
+    @apply bg-primary text-primary antialiased min-h-screen;
+  }
+
+  .apexcharts-ycrosshairs{
+    @apply bg-red-500
   }
 }

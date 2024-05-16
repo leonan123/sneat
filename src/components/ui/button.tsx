@@ -1,20 +1,21 @@
 import { ComponentProps } from 'react'
-import { twMerge } from 'tailwind-merge'
 import { tv, type VariantProps } from 'tailwind-variants'
 
+import { cn } from '@/lib/utils'
+
 const button = tv({
-  base: 'text-primary-foreground transition-colors',
+  base: 'text-muted transition-colors',
 
   variants: {
     variant: {
       primary: 'bg-primary rounded-md hover:bg-primary/95',
-      secondary: 'bg-transparent rounded-md hover:bg-foreground-hover',
+      secondary: 'bg-tertiary/75 rounded-md text-secondary hover:bg-tertiary',
       ghost:
-        'size-10 flex items-center justify-center rounded-full hover:bg-foreground-hover',
+        'size-10 flex items-center justify-center rounded-full hover:bg-hover-secondary',
     },
 
     size: {
-      sm: 'px-3 py-2',
+      sm: 'px-3 py-2 text-xs',
       md: 'px-4 py-2',
       none: 'p-0',
     },
@@ -30,9 +31,6 @@ type TButtonProps = VariantProps<typeof button> & ComponentProps<'button'>
 
 export function Button({ variant, size, className, ...props }: TButtonProps) {
   return (
-    <button
-      className={twMerge(button({ variant, size }), className)}
-      {...props}
-    />
+    <button className={cn(button({ variant, size }), className)} {...props} />
   )
 }

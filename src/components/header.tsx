@@ -19,7 +19,7 @@ export function Header() {
 
   return (
     <header className="ml-0 px-6 pt-3 md:ml-64">
-      <div className="flex items-center justify-between rounded-md bg-foreground px-6 py-3">
+      <div className="flex items-center justify-between rounded-md bg-secondary px-6 py-3">
         <div className="flex items-center gap-0.5">
           <Button
             variant="ghost"

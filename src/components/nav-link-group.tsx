@@ -12,7 +12,7 @@ export function NavLinkGroup({ navLinkGroup }: INavLinkGroupProps) {
   return (
     <>
       {navLinkGroup.title && (
-        <span className="relative my-3 block px-4 text-xs font-extralight tracking-wide opacity-25 before:absolute before:-left-2 before:bottom-1/2 before:h-px before:w-4 before:-translate-y-1/2 before:bg-primary-foreground">
+        <span className="relative my-3 block px-4 text-xs font-medium tracking-wide text-muted/40 before:absolute before:-left-2 before:bottom-1/2 before:h-px before:w-4 before:-translate-y-1/2 before:bg-white/10">
           {navLinkGroup.title}
         </span>
       )}

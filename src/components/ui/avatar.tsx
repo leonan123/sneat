@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ComponentProps } from 'react'
-import { twMerge } from 'tailwind-merge'
+
+import { cn } from '@/lib/utils'
 
 type TAvatarProps = ComponentProps<'div'> & {
   src?: string
@@ -16,7 +17,7 @@ export function Avatar({
   ...props
 }: TAvatarProps) {
   return (
-    <div {...props} className={twMerge('relative size-10', className)}>
+    <div {...props} className={cn('relative size-10', className)}>
       <Image
         src={src}
         alt={alt}
@@ -26,11 +27,11 @@ export function Avatar({
       />
 
       {status === 'online' && (
-        <div className="absolute bottom-px right-0.5 z-10 size-2.5 rounded-full border-2 border-foreground bg-green-500" />
+        <div className="border-foreground absolute bottom-px right-0.5 z-10 size-2.5 rounded-full border-2 bg-green-500" />
       )}
 
       {status === 'offline' && (
-        <div className="absolute bottom-px right-0.5 z-10 size-2.5 rounded-full border-2 border-foreground bg-red-500" />
+        <div className="border-foreground absolute bottom-px right-0.5 z-10 size-2.5 rounded-full border-2 bg-red-500" />
       )}
     </div>
   )
