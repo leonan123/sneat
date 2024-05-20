@@ -13,6 +13,10 @@ const config: Config = {
     },
 
     extend: {
+      colors: {
+        warning: 'hsla(var(--warning))',
+      },
+
       backgroundColor: {
         primary: 'hsla(var(--bg-primary))',
         secondary: 'hsla(var(--bg-secondary))',
@@ -71,6 +75,10 @@ const config: Config = {
       animation: {
         fadeIn: 'fadeIn 75ms ease-in-out',
         fadeOut: 'fadeOut 100s ease-in-out',
+      },
+
+      fontFamily: {
+        sans: ['var(--font-publicSans)', 'sans-serif'],
       },
     },
   },

@@ -20,6 +20,7 @@
     --info: 191, 97%, 47%;
     --error: 9, 100%, 56%;
     --success: 99, 71%, 54%;
+    --warning: 40.24, 100%, 50%;
 
     --card: 237, 20%, 21%;
     --card-foreground: 240 10% 3.9%;
@@ -28,7 +29,7 @@
 
 @layer base {
   body {
-    @apply bg-primary text-primary antialiased min-h-screen;
+    @apply bg-primary text-primary antialiased min-h-screen font-sans;
   }
 
   .apexcharts-ycrosshairs{

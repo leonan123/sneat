@@ -35,6 +35,14 @@ const TotalRevenueRadialChart = dynamic(
     loading: () => <p>loading...</p>,
   },
 )
+
+const ProfitReportChart = dynamic(
+  () =>
+    import('@/components/profit-report-chart').then(
+      (mod) => mod.ProfitReportChart,
+    ),
+  { ssr: false, loading: () => <p>loading...</p> },
+)
 export default function Home() {
   return (
     <main className="ml-0 mt-6 px-6 pb-3 md:ml-64">
@@ -76,7 +84,7 @@ export default function Home() {
               <h5 className="text-2xl font-medium">$12,628</h5>
             </div>
 
-            <span className="text-success flex items-center gap-1 text-sm">
+            <span className="flex items-center gap-1 text-sm text-success">
               <BiUpArrowAlt size={18} /> 72.8%
             </span>
           </Card.Content>
@@ -98,7 +106,7 @@ export default function Home() {
               <h5 className="text-2xl font-medium">$4,679</h5>
             </div>
 
-            <span className="text-success flex items-center gap-1 text-sm">
+            <span className="flex items-center gap-1 text-sm text-success">
               <BiUpArrowAlt size={18} /> 28.42%
             </span>
           </Card.Content>
@@ -182,7 +190,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="bg-info/10 text-info flex size-10 items-center justify-center rounded-md">
+                  <div className="flex size-10 items-center justify-center rounded-md bg-info/10 text-info">
                     <BiWallet size={28} />
                   </div>
                   <div className="flex flex-col">
@@ -212,7 +220,7 @@ export default function Home() {
                 <h5 className="text-2xl font-medium">$2,468</h5>
               </div>
 
-              <span className="text-error flex items-center gap-1 text-sm">
+              <span className="flex items-center gap-1 text-sm text-error">
                 <BiDownArrowAlt size={18} /> 14.82%
               </span>
             </Card.Content>
@@ -234,13 +242,33 @@ export default function Home() {
                 <h5 className="text-2xl font-medium">$14,857</h5>
               </div>
 
-              <span className="text-success flex items-center gap-1 text-sm">
+              <span className="flex items-center gap-1 text-sm text-success">
                 <BiUpArrowAlt size={18} /> 28.14%
               </span>
             </Card.Content>
           </Card.Root>
 
-          <Card.Root className="col-span-2"></Card.Root>
+          <Card.Root className="col-span-2 flex items-center justify-between">
+            <div className="flex h-full flex-col gap-6">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl">Profile Report</h3>
+
+                <div className="flex w-max items-center justify-center rounded-full bg-warning/10 px-3 py-1.5 text-xs font-medium tracking-wide text-warning">
+                  <span>YEAR 2022</span>
+                </div>
+              </div>
+
+              <div>
+                <span className="flex items-center gap-1 text-sm text-success">
+                  <BiUpArrowAlt size={18} /> 68.2%
+                </span>
+
+                <h5 className="text-2xl font-medium">$84,686k</h5>
+              </div>
+            </div>
+
+            <ProfitReportChart />
+          </Card.Root>
         </div>
       </div>
     </main>

@@ -62,8 +62,8 @@ export function TotalRevenueBarChart() {
     },
     plotOptions: {
       bar: {
-        borderRadius: 10,
-        columnWidth: 30,
+        borderRadius: 8,
+        columnWidth: 35,
       },
     },
     xaxis: {
