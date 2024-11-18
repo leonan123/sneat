@@ -1,13 +1,13 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Public_Sans as PublicSans } from 'next/font/google'
+// import { Public_Sans as PublicSans } from 'next/font/google'
 
-const publicSans = PublicSans({
-  subsets: ['latin'],
-  variable: '--font-publicSans',
-  weight: ['400', '300', '500', '600', '700', '800', '900'],
-})
+// const publicSans = PublicSans({
+//   subsets: ['latin'],
+//   variable: '--font-publicSans',
+//   weight: ['400', '300', '500', '600', '700', '800', '900'],
+// })
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${publicSans.variable} dark`}>
+    <html lang="en" className="dark">
       <body>{children}</body>
     </html>
   )

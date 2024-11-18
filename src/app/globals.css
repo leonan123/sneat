@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-publicSans: "Public Sans", sans-serif;
+    
     --bg-primary: 240, 19%, 17%;
     --bg-secondary: 237, 20%, 21%;
     --bg-tertiary: 238.33, 26.09%, 27.06%;
@@ -17,6 +21,8 @@
     --text-muted: 240,9.68%,63.53%;
     --text-active: 0, 0%, 100%;
     
+    --primary: 239, 100%, 71%;
+    --secondary: 240, 25%, 87.45%;
     --info: 191, 97%, 47%;
     --error: 9, 100%, 56%;
     --success: 99, 71%, 54%;
@@ -30,9 +36,5 @@
 @layer base {
   body {
     @apply bg-primary text-primary antialiased min-h-screen font-sans;
-  }
-
-  .apexcharts-ycrosshairs{
-    @apply bg-red-500
   }
 }

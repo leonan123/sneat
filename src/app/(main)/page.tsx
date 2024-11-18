@@ -12,8 +12,11 @@ import {
   BiWallet,
 } from 'react-icons/bi'
 
+import { OrderStatisticsChart } from '@/components/order-statistics-chart'
 import { Button } from '@/components/ui/button'
 import * as Card from '@/components/ui/card'
+import { ORDERS } from '@/constants'
+import { cn } from '@/lib/utils'
 
 const TotalRevenueBarChart = dynamic(
   () =>
@@ -118,7 +121,7 @@ export default function Home() {
           <Card.Content className="flex items-center gap-2">
             <div className="h-full flex-1 border-r border-muted/20">
               <Card.Header>
-                <h3 className="text-xl">Total revenue</h3>
+                <h3 className="text-xl font-medium">Total revenue</h3>
 
                 <Button variant="ghost" size="none">
                   <BiDotsVertical size={22} />
@@ -270,6 +273,50 @@ export default function Home() {
             <ProfitReportChart />
           </Card.Root>
         </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-3 gap-6">
+        <Card.Root>
+          <Card.Header className="items-start pb-3">
+            <div>
+              <h3 className="text-xl font-medium">Order Statistics</h3>
+              <h4 className="text-sm text-muted">42.82k Total Sales</h4>
+            </div>
+            <Button variant="ghost" size="none">
+              <BiDotsVertical size={22} />
+              <span className="sr-only">toggle dropdown</span>
+            </Button>
+          </Card.Header>
+
+          <Card.Content>
+            <div className="flex items-center justify-between">
+              <div>
+                <h5 className="text-2xl">8,258</h5>
+                <span className="text-muted">Total Orders</span>
+              </div>
+
+              <OrderStatisticsChart />
+            </div>
+
+            <ul className="mt-3 flex flex-col gap-6">
+              {ORDERS.map((order) => (
+                <li key={order.id} className="flex items-center">
+                  <div className="flex flex-1 items-center gap-4">
+                    <div className={cn('rounded-lg px-2 py-1.5', order.styles)}>
+                      {order.avatarIcon}
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <h6>{order.title}</h6>
+                      <p className="text-sm text-muted">{order.subtitle}</p>
+                    </div>
+                  </div>
+                  <div>{order.amount}</div>
+                </li>
+              ))}
+            </ul>
+          </Card.Content>
+        </Card.Root>
+        <Card.Root className=""></Card.Root>
       </div>
     </main>
   )

@@ -14,7 +14,12 @@ const config: Config = {
 
     extend: {
       colors: {
+        primary: 'hsla(var(--primary))',
+        secondary: 'hsla(var(--secondary))',
         warning: 'hsla(var(--warning))',
+        info: 'hsla(var(--info))',
+        success: 'hsla(var(--success))',
+        error: 'hsla(var(--error))',
       },
 
       backgroundColor: {
@@ -22,7 +27,6 @@ const config: Config = {
         secondary: 'hsla(var(--bg-secondary))',
         tertiary: 'hsla(var(--bg-tertiary))',
         active: 'hsla(var(--bg-active))',
-        info: 'hsla(var(--info))',
 
         hover: {
           secondary: 'hsla(var(--bg-secondary-hover))',
@@ -35,9 +39,6 @@ const config: Config = {
         secondary: 'hsla(var(--text-secondary))',
         muted: 'hsla(var(--text-muted))',
         active: 'hsla(var(--text-active))',
-        info: 'hsla(var(--info))',
-        error: 'hsla(var(--error))',
-        success: 'hsla(var(--success))',
       },
 
       outlineColor: {
